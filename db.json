@@ -1,5 +1,11 @@
 {
   "en.translation": {
-    "test_key": "This is internationalized text"
+    "test_key": "This is internationalized text",
+    "app": {
+      "name": "AppName!",
+      "title": "This is application title",
+      "nextLevel": "This is next level translation key",
+      "withFormat": "This is text with current year {{year}}"
+    }
   }
 }
