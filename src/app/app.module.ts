@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, APP_INITIALIZER, LOCALE_ID } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { environment } from '../environments/environment'
 
 import {
@@ -13,12 +14,13 @@ import * as i18nextLanguageDetector from 'i18next-browser-languagedetector'
 import * as i18nextXHRBackend from 'i18next-xhr-backend'
 
 import { AppComponent } from './app.component'
+import { ChangeLangComponent } from './change-lang/change-lang.component'
 
 /*
  * Platform and Environment providers/directives/pipes
  */
 const i18nextOptions = {
-  whitelist: ['en', 'ru'],
+  whitelist: ['en', 'cs'],
   fallbackLng: 'en',
   debug: !environment.production, // set debug
   returnEmptyString: false, // disables empty string as valid translations
@@ -69,8 +71,9 @@ export const I18N_PROVIDERS = [
 ]
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ChangeLangComponent],
   imports: [
+    FormsModule,
     BrowserModule,
     I18NextModule.forRoot({
       // errorHandlingStrategy: StrictErrorHandlingStrategy

@@ -10,11 +10,25 @@ interface Nav {
 @Component({
   selector: 'app-root',
   template: `
-    <h1>{{ name }}</h1>
-    <div>{{ 'test_key' | i18next }}</div>
-    <div>{{ title }}</div>
-    <div>{{ 'app.nextLevel' | i18next }}</div>
-    <div>{{ 'app.withFormat' | i18next: { year: 2018 } }}</div>
+    <div class="main-view">
+      <h1>{{ name }}</h1>
+      <div>{{ 'test_key' | i18next }}</div>
+      <div>{{ title }}</div>
+      <div>{{ 'app.withFormat' | i18next: { year: 2018 } }}</div>
+      <h3>Single/Plural</h3>
+      <div>{{ 'app.keyWithCount' | i18next: { count: 1 } }}</div>
+      <div>{{ 'app.keyWithCount' | i18next: { count: 65 } }}</div>
+      <h3>Interval</h3>
+      <div>{{ 'key_upper' | i18next: { text: 'testing text' } }}</div>
+      <h3>Array</h3>
+      <div>{{ 'array.0' | i18next }}</div>
+      <div>{{ 'array.1' | i18next }}</div>
+      <div>{{ 'array.2' | i18next }}</div>
+      <div>{{ 'array.3' | i18next }}</div>
+      <div>{{ 'array.4' | i18next }}</div>
+
+      <app-change-lang></app-change-lang>
+    </div>
   `,
   styleUrls: ['./app.component.scss']
 })
