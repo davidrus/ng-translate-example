@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+
+interface Nav {
+  link: string
+  name: string
+  exact: boolean
+}
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <div>{{ 'test_key' | i18next }}</div>
+  `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngTest';
+  name = 'ngTest'
 }

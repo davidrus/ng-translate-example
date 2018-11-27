@@ -1,0 +1,17 @@
+nav {
+  margin: 0 0 10px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid blue;
+  a {
+    display: inline-block;
+    background: grey;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+    &.active {
+      color: #b690f1;
+      background: #363c48;
+    }
+  }
+}
