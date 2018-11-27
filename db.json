@@ -4,8 +4,36 @@
     "app": {
       "name": "AppName!",
       "title": "This is application title",
-      "nextLevel": "This is next level translation key",
-      "withFormat": "This is text with current year {{year}}"
-    }
+      "withFormat": "This is text with current year {{year}}",
+      "keyWithCount": "We've got {{count}} item",
+      "keyWithCount_plural": "We've got {{count}} items"
+    },
+    "key_upper": "{{text, uppercase}} just uppercased",
+    "array": [
+      "this",
+      "is",
+      "testing",
+      "array",
+      "text"
+    ]
+  },
+
+  "cs.translation": {
+    "test_key": "Nejvic prelozeny testovaci klic",
+    "app": {
+      "name": "Jmeno aplikace!",
+      "title": "Aplikacni titulek",
+      "withFormat": "Text s rokem, dodanym z kodu {{year}}",
+      "keyWithCount": "Mame {{count}} vec",
+      "keyWithCount_plural": "Mame {{count}} veci"
+    },
+    "key_upper": "{{text, uppercase}} - tento text je je proste jen uppercased :)",
+    "array": [
+      "toto",
+      "je",
+      "testovaci",
+      "text",
+      "v poli"
+    ]
   }
 }
