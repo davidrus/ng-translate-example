@@ -27,6 +27,12 @@ interface Nav {
       <div>{{ 'array.3' | i18next }}</div>
       <div>{{ 'array.4' | i18next }}</div>
 
+      <h4>Example of deep object</h4>
+      <div>{{ 'admin.users.headers.title' | i18next }}</div>
+
+      <h5>Non Existing Key</h5>
+      <div>{{ 'non.existing.key' | i18next }}</div>
+
       <app-change-lang></app-change-lang>
     </div>
   `,

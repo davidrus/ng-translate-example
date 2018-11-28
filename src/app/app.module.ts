@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, APP_INITIALIZER, LOCALE_ID } from '@angular/core'
 import { FormsModule } from '@angular/forms'
+import { HttpRequest } from '@angular/common/http'
 import { environment } from '../environments/environment'
 
 import {
@@ -9,7 +10,7 @@ import {
   I18NextModule,
   ITranslationService,
   defaultInterpolationFormat
-} from 'node_modules/angular-i18next'
+} from 'angular-i18next'
 import * as i18nextLanguageDetector from 'i18next-browser-languagedetector'
 import * as i18nextXHRBackend from 'i18next-xhr-backend'
 
@@ -20,7 +21,7 @@ import { ChangeLangComponent } from './change-lang/change-lang.component'
  * Platform and Environment providers/directives/pipes
  */
 const i18nextOptions = {
-  whitelist: ['en', 'cs'],
+  whitelist: ['en', 'cs', 'flat'],
   fallbackLng: 'en',
   debug: !environment.production, // set debug
   returnEmptyString: false, // disables empty string as valid translations
@@ -31,7 +32,7 @@ const i18nextOptions = {
 
   // backend plugin options
   backend: {
-    loadPath: (langs, ns) => 'http://localhost:3500/{{lng}}.{{ns}}' // BE URL config (Relative or Absolute)
+    loadPath: (langs, ns) => 'http://localhost:3500/locales/{{lng}}' // BE URL config (Relative or Absolute)
   },
 
   // lang detection plugin options
@@ -39,6 +40,13 @@ const i18nextOptions = {
     order: ['querystring', 'cookie'], // order and from where user language should be detected
     lookupCookie: 'lang', // keys or params to lookup language from
     caches: ['cookie'] // // cache user language on
+  },
+
+  saveMissing: true,
+  missingKeyHandler: (lng, ns, key, fallbackValue) => {
+    const request = new XMLHttpRequest()
+    request.open('POST', 'http://localhost:3500/locales/missing', true)
+    request.send(key)
   }
 }
 

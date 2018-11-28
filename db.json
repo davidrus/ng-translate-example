@@ -1,39 +1,62 @@
 {
-  "en.translation": {
-    "test_key": "This is internationalized text",
-    "app": {
-      "name": "AppName!",
-      "title": "This is application title",
-      "withFormat": "This is text with current year {{year}}",
-      "keyWithCount": "We've got {{count}} item",
-      "keyWithCount_plural": "We've got {{count}} items"
+  "locales": [{
+      "id": "en",
+      "test_key": "This is internationalized text",
+      "app": {
+        "name": "AppName!",
+        "title": "This is application title",
+        "withFormat": "This is text with current year {{year}}",
+        "keyWithCount": "We've got {{count}} item",
+        "keyWithCount_plural": "We've got {{count}} items"
+      },
+      "key_upper": "{{text, uppercase}} just uppercased",
+      "array": ["this", "is", "testing", "array", "text"],
+      "admin": {
+        "users": {
+          "headers": {
+            "title": "Admin > User > Headers > Title"
+          }
+        }
+      }
     },
-    "key_upper": "{{text, uppercase}} just uppercased",
-    "array": [
-      "this",
-      "is",
-      "testing",
-      "array",
-      "text"
-    ]
-  },
 
-  "cs.translation": {
-    "test_key": "Nejvic prelozeny testovaci klic",
-    "app": {
-      "name": "Jmeno aplikace!",
-      "title": "Aplikacni titulek",
-      "withFormat": "Text s rokem, dodanym z kodu {{year}}",
-      "keyWithCount": "Mame {{count}} vec",
-      "keyWithCount_plural": "Mame {{count}} veci"
+    {
+      "id": "cs",
+      "test_key": "Nejvic prelozeny testovaci klic",
+      "app": {
+        "name": "Jmeno aplikace!",
+        "title": "Aplikacni titulek",
+        "withFormat": "Text s rokem, dodanym z kodu {{year}}",
+        "keyWithCount": "Mame {{count}} vec",
+        "keyWithCount_plural": "Mame {{count}} veci"
+      },
+      "key_upper": "{{text, uppercase}} - tento text je je proste jen uppercased :)",
+      "array": ["toto", "je", "testovaci", "text", "v poli"],
+      "admin": {
+        "users": {
+          "headers": {
+            "title": "Admin > User > Headers > Title"
+          }
+        }
+      }
     },
-    "key_upper": "{{text, uppercase}} - tento text je je proste jen uppercased :)",
-    "array": [
-      "toto",
-      "je",
-      "testovaci",
-      "text",
-      "v poli"
-    ]
-  }
+
+    {
+      "id": "flat",
+      "test_key": "Nejvic prelozeny testovaci klic",
+      "app.name": "Jmeno aplikace!",
+      "app.title": "Aplikacni titulek",
+      "app.withFormat": "Text s rokem, dodanym z kodu {{year}}",
+      "app.keyWithCount": "Mame {{count}} vec",
+      "app.keyWithCount_plural": "Mame {{count}} veci",
+      "key_upper": "{{text, uppercase}} - tento text je je proste jen uppercased :)",
+      "array": ["toto", "je", "testovaci", "text", "v poli"],
+      "admin.users.headers.title": "Admin > User > Headers > Title"
+    },
+
+    {
+      "id": "missing",
+      "message": "added"
+    }
+  ]
 }
